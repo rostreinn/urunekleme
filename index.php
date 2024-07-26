@@ -6,7 +6,7 @@ if ($baglanti->connect_error) {
     die('Veritabanı bağlantısı başarısız: ' . $baglanti->connect_error);
 }
 
-$sql = "SELECT urun_adi, urun_fiyati, urun_aciklama FROM urunler";
+$sql = "SELECT urun_adi, urun_fiyati, urun_bilgi FROM urunler";
 $result = $baglanti->query($sql);
 
 if ($result->num_rows > 0) {
@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
 
                 <h3><?php echo htmlspecialchars($urun['urun_adi']); ?></h3>
                 <p>Fiyat: <?php echo htmlspecialchars($urun['urun_fiyati']); ?> TL</p>
-                <p><?php echo htmlspecialchars($urun['urun_aciklama']); ?></p>
+                <p><?php echo htmlspecialchars($urun['urun_bilgi']); ?></p>
             </div>
         <?php endforeach; ?>
     </section>
