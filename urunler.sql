@@ -30,15 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `urunler` (
   `urun_adi` varchar(65) NOT NULL,
   `urun_fiyati` int(11) NOT NULL,
-  `urun_aciklama` varchar(65) NOT NULL,
-  `urun_fotografi` varchar(65) NOT NULL
+  `urun_bilgi` varchar(65) NOT NULL,
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `urunler`
 --
 
-INSERT INTO `urunler` (`urun_adi`, `urun_fiyati`, `urun_aciklama`, `urun_fotografi`) VALUES
+INSERT INTO `urunler` (`urun_adi`, `urun_fiyati`, `urun_bilgi`) VALUES
 
 COMMIT;
 
