@@ -37,7 +37,7 @@ if(isset($_POST['urun_ekle'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ürün Ekle</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
     <h1>Ürün Ekle</h1>
