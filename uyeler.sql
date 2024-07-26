@@ -50,7 +50,7 @@ CREATE TABLE `urunler` (
 -- Tablo döküm verisi `urunler`
 --
 
-INSERT INTO `urunler` (`urun_adi`, `urun_fiyati`, `urun_bilgi') VALUES
+INSERT INTO `urunler` (`urun_adi`, `urun_fiyati`, `urun_bilgi`) VALUES
 
 -- --------------------------------------------------------
 
