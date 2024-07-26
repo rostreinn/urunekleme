@@ -7,18 +7,18 @@ session_start();
 if(isset($_POST['urun_ekle'])) {
     $urun_adi = htmlspecialchars($_POST["urun_adi"]);
     $urun_fiyati = htmlspecialchars($_POST["urun_fiyati"]);
-    $urun_aciklama = htmlspecialchars($_POST["urun_aciklama"]);
+    $urun_aciklama = htmlspecialchars($_POST["urun_bilgi"]);
 
     if ($baglanti->connect_error) {
         die('Veritabanı bağlantısı başarısız: ' . $baglanti->connect_error);
     }
 
-    $stmt = $baglanti->prepare("INSERT INTO urunler (urun_adi, urun_fiyati, urun_aciklama) VALUES (?, ?, ?)");
+    $stmt = $baglanti->prepare("INSERT INTO urunler (urun_adi, urun_fiyati, urun_bilgi) VALUES (?, ?, ?)");
     if ($stmt === false) {
         die('prepare() failed: ' . htmlspecialchars($baglanti->error));
     }
 
-    $stmt->bind_param("sss", $urun_adi, $urun_fiyati, $urun_aciklama);
+    $stmt->bind_param("sss", $urun_adi, $urun_fiyati, $urun_bilgi);
     if (!$stmt->execute()) {
         die('execute() failed: ' . htmlspecialchars($stmt->error));
     } else {
@@ -51,8 +51,8 @@ if(isset($_POST['urun_ekle'])) {
             <input type="text" name="urun_fiyati" class="form-control" id="urun_fiyati" placeholder="Ürün Fiyatı" required>
         </div>
         <div class="form-group p-5">
-            <label for="urun_aciklama">Ürün Açıklaması</label>
-            <textarea name="urun_aciklama" class="form-control" id="urun_aciklama" placeholder="Ürün Açıklaması" required></textarea>
+            <label for="urun_bilgi">Ürün Açıklaması</label>
+            <textarea name="urun_bilgi" class="form-control" id="urun_bilgi" placeholder="Ürün Açıklaması" required></textarea>
         </div>
         <button type="submit" name="urun_ekle" class="btn btn-primary">Ürün Ekle</button>
     </form>
